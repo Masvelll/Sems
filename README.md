@@ -1,17 +1,18 @@
 
+
 ### 3 Семинар
 
 | Выполнено | Не проверено | Осталось |
 |-----------|--------------|----------|
-| array_v1  | array_v2     | any      |
+| array_v1  | [array_v2](https://github.com/Masvelll/Sems/blob/master/les3/array.cpp)     | any      |
 | array_v2  |              |          |
 
 ### 4 Семинар
 
 | Выполнено | Не проверено | Осталось |
 |-----------|--------------|----------|
-| pow       | pow          | grid     |
-| prime     | prime        | IntList  |
+| pow       | [pow](https://github.com/Masvelll/Sems/blob/master/les4/pow)          | grid     |
+| prime     | [prime](https://github.com/Masvelll/Sems/blob/master/les4/prime)        | IntList  |
 
 ### 5 Семинар
 
