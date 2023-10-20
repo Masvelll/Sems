@@ -7,44 +7,91 @@ public:
     using value_type = T;
     using size_type = unsigned;
 private:
-    T* const data;
-    T* const m_data;
-    size_type const y_size, x_size;
+    T* m_data;
+    size_type y_size, x_size;
+
+    void copy_data(T* const from, T* to){
+        for (size_type y_idx = 0; y_idx < y_size; y_idx+=1) {
+            for (size_type x_idx = 0; x_idx < x_size; x_idx+=1){
+                to[y_size * y_idx + x_idx] = from[y_size * y_idx + x_idx];
+            }
+        }
+    }
+
 public:
-    Grid(T *data , size_type y_size , size_type x_size)
-    : data(data)
-    , m_data(nullptr)
+    Grid(T* const data , size_type y_size , size_type x_size)
+    : m_data(new T[y_size * x_size])
+    
     , y_size(y_size)
     , x_size(x_size)
     {
+        copy_data(data, m_data);
     }
 
-    explicit Grid(T const &t) :data(nullptr), m_data(new T[1]), y_size(1), x_size(1) {
+    Grid(T const &t) : m_data(new T[1]), y_size(1), x_size(1) {
         m_data[0] = t;
     }
+
+    Grid(size_type y_size, size_type x_size)
+    : m_data(new T[y_size * x_size])
+    , y_size(y_size)
+    , x_size(x_size) {}
+
 
     ~Grid() {
         delete[] m_data;
     }
 
-    Grid(Grid<T> const&) = delete;
-    Grid(Grid<T>&&) = delete;
-    Grid<T>& operator=(Grid<T>&) = delete;
-    Grid<T>& operator=(Grid<T>&&) = delete;
+    
+
+    Grid(Grid<T> const& other)
+    : m_data(new T[other.x_size * other.y_size])
+    , y_size(other.y_size)
+    , x_size(other.x_size) 
+    { 
+        copy_data(other.m_data, m_data); 
+    }
+
+    Grid(Grid<T>&& other)
+    : m_data(nullptr)
+    , y_size(0)
+    , x_size(0)
+    {
+        std::swap(other.m_data, m_data);
+        std::swap(y_size, other.y_size);
+        std::swap(x_size, other.x_size);
+    }
+
+    Grid<T>& operator=(const Grid<T>& other) {
+        if (other == *this) { return *this; }
+        Grid<T> tmp(other);
+        std::swap(tmp.m_data, m_data);
+        std::swap(tmp.x_size, x_size);
+        std::swap(tmp.y_size, y_size);
+        return *this;
+    }
+
+    Grid<T>& operator=(Grid<T>&& other) {
+        if (other == *this) { return *this; }
+        std::swap(other.m_data, m_data);
+        std::swap(other.x_size, x_size);
+        std::swap(other.y_size, y_size);
+        return *this;
+    }
 
     T operator()(size_type y_idx , size_type x_idx) const
     {
-        return data[y_idx * x_size + x_idx];
+        return m_data[y_idx * x_size + x_idx];
     }
 
     T& operator()(size_type y_idx, size_type x_idx)
     {
-        return data [y_idx * x_size + x_idx];
+        return m_data[y_idx * x_size + x_idx];
     }
 
     Grid<T>& operator=(T const& t)
     {
-        for (auto it = data, end = data + x_size * y_size; it != end; ++it) *it = t;
+        for (auto it = m_data, end = m_data + x_size * y_size; it != end; ++it) *it = t;
         return *this;
     }
 
@@ -62,6 +109,11 @@ int main() {
 
     Grid g2(5);
     std::cout << g2(0, 0) << std::endl;
+
+    Grid g3 = g2;
+
+    Grid g4(std::move(g1));
+    Grid g5(std::move(g1));
 
     return 0;
 }

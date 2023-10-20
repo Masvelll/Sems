@@ -44,7 +44,6 @@
         Array& operator=(const Array & other) {
             if (&other == this) { return *this; }
             Array<T> tmp(other);
-            std::cout<< "fall" << std::endl;
             std::swap(tmp.m_size, m_size);
             std::swap(tmp.m_data, m_data);
 

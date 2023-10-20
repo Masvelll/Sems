@@ -11,7 +11,7 @@
 
 | Выполнено | Не проверено | Осталось |
 |-----------|--------------|----------|
-| pow       | [pow](https://github.com/Masvelll/Sems/blob/master/les4/pow.cpp)          | grid     |
+| pow       | [pow](https://github.com/Masvelll/Sems/blob/master/les4/pow.cpp)          | [grid](https://github.com/Masvelll/Sems/blob/master/les4/grid.cpp)     |
 | prime     | [prime](https://github.com/Masvelll/Sems/blob/master/les4/prime.cpp)        | IntList  |
 
 ### 5 Семинар
