@@ -27,7 +27,7 @@
 
 | Выполнено | Не проверено | Осталось    |
 |-----------|--------------|-------------|
-|           |[progress_bar](https://github.com/Masvelll/Sems/blob/master/les6/progress_bar.cpp)     |      |
-|           |[fixed_prescision](https://github.com/Masvelll/Sems/blob/master/les6/fixed_precision.cpp)              | from_string |
-|           |              | vector_base |
-|           |              | vector_v2   |
+|           |[progress_bar](https://github.com/Masvelll/Sems/blob/master/les6/progress_bar.cpp)     |     |
+|           |[fixed_prescision](https://github.com/Masvelll/Sems/blob/master/les6/fixed_precision.cpp)              |  |
+|           |              |  |
+|           |              |  |
