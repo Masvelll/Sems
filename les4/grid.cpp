@@ -21,7 +21,6 @@ private:
 public:
     Grid(T* const data , size_type y_size , size_type x_size)
     : m_data(new T[y_size * x_size])
-    
     , y_size(y_size)
     , x_size(x_size)
     {
@@ -29,13 +28,21 @@ public:
     }
 
     Grid(T const &t) : m_data(new T[1]), y_size(1), x_size(1) {
-        m_data[0] = t;
+        m_data[0] = T(t);
     }
 
     Grid(size_type y_size, size_type x_size)
     : m_data(new T[y_size * x_size])
     , y_size(y_size)
     , x_size(x_size) {}
+
+    Grid(size_type y_size, size_type x_size, T const &t)
+    : m_data(new T[y_size * x_size])
+    , y_size(y_size)
+    , x_size(x_size) 
+    {
+        for (size_type i = 0; i < x_size * y_size; i++) { m_data[i] = T(t); }
+    }
 
 
     ~Grid() {
@@ -99,6 +106,19 @@ public:
     size_type get_x_size() const { return x_size; }
 } ;
 
+template<typename T>
+    std::ostream &operator<<(std::ostream &os, const Grid<T>& g) {
+            for (uint y_idx = 0; y_idx < g.get_y_size(); y_idx+=1) {
+                for (uint x_idx = 0; x_idx < g.get_x_size(); x_idx+=1){
+                    os << g(y_idx, x_idx) << " ";
+            }
+            os << "\n";
+            }
+
+            
+            return os;
+        }
+
 int main() {
 
     int arr[9] = {1, 2, 3,
@@ -111,9 +131,13 @@ int main() {
     std::cout << g2(0, 0) << std::endl;
 
     Grid g3 = g2;
+    std::cout<<g1;
 
     Grid g4(std::move(g1));
     Grid g5(std::move(g1));
+
+    Grid<int> g6(5, 6, 2);
+    std::cout << g6;
 
     return 0;
 }
