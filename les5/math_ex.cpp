@@ -3,30 +3,28 @@
 #include <array>
 
 struct math_exeption: std::exception {
-    explicit math_exeption(int line) : m_line(line){ }
-    char const *what() const noexcept override {
+    explicit math_exeption() : err_msg("Math error") { }
+    explicit math_exeption(char const * str) : err_msg(str) { }
 
-        return m_line;
-    }
-    int m_line;
+    char const *what() const noexcept override { return err_msg; }
+
+    char const * err_msg;
 
 };
 
 int divide(int x, int y) {
 
     try {
-        throw math_exeption(__LINE__);
-    }   catch (std::exception const &e) {
+        if (y == 0) throw math_exeption("Division by zero error");
+        return x / y;
+    } catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
-    };
-
-    if (y == 0) math_exeption(__LINE__);
-    return x / y;
+    }
 }
 
 int main() {
 
-    
+    divide(5, 0);
 
     return 0;
 }
