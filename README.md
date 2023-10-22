@@ -18,7 +18,7 @@
 
 | Выполнено | Не проверено | Осталось    |
 |-----------|--------------|-------------|
-|           | [math_ex](https://github.com/Masvelll/Sems/blob/master/les5/prime.cpp)             | from_string |
+|           | [math_ex](https://github.com/Masvelll/Sems/blob/master/les5/math_ex.cpp)             | from_string |
 |           |              | vector_base |
 |           |              | vector_v2   |
 
