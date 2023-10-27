@@ -5,7 +5,7 @@
 | Выполнено | Не проверено | Осталось |
 |-----------|--------------|----------|
 | array_v1  | [array_v2](https://github.com/Masvelll/Sems/blob/master/les3/array.cpp)     | any      |
-| array_v2  |              |          |
+| array_v2  |                                                                             |          |
 
 ### 4 Семинар
 
@@ -18,15 +18,15 @@
 
 | Выполнено | Не проверено | Осталось    |
 |-----------|--------------|-------------|
-|           | [math_ex](https://github.com/Masvelll/Sems/blob/master/les5/math_ex.cpp)             | from_string |
-|           |              | vector_base |
-|           |              | vector_v2   |
+|           | [math_ex](https://github.com/Masvelll/Sems/blob/master/les5/math_ex.cpp)                      | vector_v2 |
+|           | [from_string](https://github.com/Masvelll/Sems/blob/master/les5/from_string.cpp)              | vector_base |
+|           |              |    |
 
 ### 6 Семинар
 
 | Выполнено | Не проверено | Осталось    |
 |-----------|--------------|-------------|
 |           |[progress_bar](https://github.com/Masvelll/Sems/blob/master/les6/progress_bar.cpp)     |     |
-|           |[fixed_prescision](https://github.com/Masvelll/Sems/blob/master/les6/fixed_precision.cpp)              |  |
+|           |[fixed_precision](https://github.com/Masvelll/Sems/blob/master/les6/fixed_precision.cpp)              |  |
 |           |              |  |
 |           |              |  |
