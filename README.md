@@ -4,8 +4,8 @@
 
 | Выполнено | Не проверено | Осталось |
 |-----------|--------------|----------|
-| array_v1  | [array_v2](https://github.com/Masvelll/Sems/blob/master/les3/array.cpp)     | any      |
-| array_v2  |                                                                             |          |
+| array_v1  |              | any      |
+| [array_v2](https://github.com/Masvelll/Sems/blob/master/les3/array.cpp)  |         |          |
 
 ### 4 Семинар
 
